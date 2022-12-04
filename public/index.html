@@ -2,19 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+<!--    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+<!--    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />-->
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+<!--    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />-->
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -37,12 +37,50 @@
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
               m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
       ga('create', 'UA-250899729-1', 'auto');
-      ga('send', 'pageview');
+      ga('require', 'ec');
+
+      // ga('set', 'dimension1', 'TEST 1');
+      // ga('set', 'dimension2', 'TEST 2');
+      // ga('set', 'metric1', 100);
+      ga('send', 'pageview', {
+        dimension1 : 'TEST 1',
+        dimension2 : 'TEST 2',
+        metric1 : 100
+      });
+      window.ga("send", "event", "homepage", "click");
+
       setTimeout(()=>{
         ga('set', 'dimension5', 'custom data');
-      }, 100)
+        // ga('send', {
+        //   hitType: 'event',
+        //   eventCategory: 'Videos',
+        //   eventAction: 'play',
+        //   eventLabel: 'Fall Campaign',
+        //   dimension5: 'aaaa'
+        // });
+        // ga('send', 'pageview');
+        // ga('ec:addProduct', {               // Provide product details in an productFieldObject.
+        //   'id': 'P12345',                   // Product ID (string).
+        //   'name': 'Android Warhol T-Shirt', // Product name (string).
+        //   'category': 'Apparel',            // Product category (string).
+        //   'brand': 'Google',                // Product brand (string).
+        //   'variant': 'black',               // Product variant (string).
+        //   'price': '29.20',                 // Product price (number).
+        //   'coupon': 'APPARELSALE',          // Product coupon (string).
+        //   'quantity': 1                     // Product quantity (number).
+        // });
+        //
+        // ga('ec:setAction', 'purchase', {          // Transaction details are provided in an actionFieldObject.
+        //   'id': 'T12345',                         // (Required) Transaction id (string).
+        //   'affiliation': 'Google Store - Online', // Affiliation (string).
+        //   'revenue': '37.39',                     // Revenue (number).
+        //   'tax': '2.85',                          // Tax (number).
+        //   'shipping': '5.34',                     // Shipping (number).
+        //   'coupon': 'SUMMER2013'                  // Transaction coupon (string).
+        // });
+      }, 1000);
+
     </script>
     <!-- End Google Analytics -->
 
