@@ -1,20 +1,54 @@
 import {Accordion, Button, ListGroup, ListGroupItem} from "react-bootstrap";
+import {ga} from "../ga";
 
 function Home(){
 
+    const eventSendHandler = () => {
+        // ga("send", "event", {
+        //     'eventCategory': undefined,
+        //     'eventAction': undefined,
+        //     'eventLabel': 'click'
+        // });
+        ga("send", "event", {
+            'eventCategory': `aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa            
+            aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`,
+            'eventAction': 'click3',
+            'eventLabel': 'click3'
+        });
+    }
+
     const clickHandler = () => {
-        window.ga("ec:addProduct", {
-            "id": "9bdd2",
-            "name": "Compton T-Shirt",
-            "price": "44.00",
-            "brand": "Compton",
-            "category": "T-Shirts",
-            "position": "1"
+        ga('ec:addProduct', {
+            'id': 'P001',
+            'name': '제품1'
         });
-        window.ga("ec:setAction", "click", {
-            "list": "homepage"
+        ga('ec:setAction', 'purchase', {
+            'id': '00001'
         });
-        window.ga("send", "event", "homepage", "click", "");
+        ga("send", "event", "ecommerce", "purchase");
+
+
+        // ga("send", "pageview")
+        // ga("ec:setAction", "click", {
+        //     "list": "homepage"
+        // });
+        // ga("send", "event", "homepage", "click", "");
     }
     return (
         <div className="container">
@@ -25,7 +59,7 @@ function Home(){
                             <Accordion.Header>UA EVENT TEST</Accordion.Header>
                             <Accordion.Body>
                                 <ListGroup>
-                                    <ListGroupItem onClick={console.log} as={Button}>Event TEST</ListGroupItem>
+                                    <ListGroupItem onClick={eventSendHandler} as={Button}>Event TEST</ListGroupItem>
                                     <ListGroupItem onClick={clickHandler} as={Button}>Event TEST</ListGroupItem>
                                 </ListGroup>
                             </Accordion.Body>

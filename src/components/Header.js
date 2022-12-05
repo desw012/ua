@@ -1,4 +1,5 @@
 import {Container, Nav, Navbar} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 
 function Header() {
@@ -12,6 +13,7 @@ function Header() {
                         <Nav.Link href="/categories/1">category1</Nav.Link>
                         <Nav.Link href="/categories/2">category2</Nav.Link>
                         <Nav.Link href="/categories/3">category3</Nav.Link>
+                        <Link to='/spa'>SPA LINK</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

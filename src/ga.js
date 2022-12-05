@@ -1,0 +1,1 @@
+export const ga = window.ga;

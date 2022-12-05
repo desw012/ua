@@ -37,21 +37,24 @@
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
               m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-250899729-1', 'auto');
       ga('require', 'ec');
+      ga('create', 'UA-250899729-1', 'auto');
+
 
       // ga('set', 'dimension1', 'TEST 1');
       // ga('set', 'dimension2', 'TEST 2');
       // ga('set', 'metric1', 100);
       ga('send', 'pageview', {
-        dimension1 : 'TEST 1',
-        dimension2 : 'TEST 2',
-        metric1 : 100
+        //title : 'location not undefined'
+        // , location: undefined
       });
-      window.ga("send", "event", "homepage", "click");
+      // ga('send', 'pageview');
+      // ga("send", "event", "homepage", "click", {
+      //   location: undefined
+      // });
 
       setTimeout(()=>{
-        ga('set', 'dimension5', 'custom data');
+        //ga('set', 'dimension5', 'custom data');
         // ga('send', {
         //   hitType: 'event',
         //   eventCategory: 'Videos',
